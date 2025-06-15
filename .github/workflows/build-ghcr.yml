@@ -2,8 +2,11 @@ name: Build and Push to GHCR
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   build:
@@ -27,6 +30,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/final-destination:latest
+          tags: ghcr.io/${{ github.repository_owner }}/final-destination-12:latest
