@@ -30,6 +30,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: .
+          file: ./Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/final-destination-12:latest
