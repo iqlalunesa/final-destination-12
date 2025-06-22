@@ -1,0 +1,11 @@
+groups:
+  - name: image-usage-percent-rules
+    rules:
+      - alert: ImageUsageHigh
+        expr: webapp_images_usage_percent > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Penggunaan folder images tinggi (>80%)"
+          description: "Ukuran folder webapp/images sudah mencapai {{ $value }}%."
