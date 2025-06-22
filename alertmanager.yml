@@ -3,9 +3,12 @@ global:
 
 route:
   receiver: "discord-webhook"
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
 
 receivers:
   - name: "discord-webhook"
     webhook_configs:
-      - url: "https://discord.com/api/webhooks/1372507489064587336/6z9ONKp9Oq6FGGs-_By-9DZVPwBINOoIRO7dtKBNvX0-qi46D6dg1FT8Mz-E0T3oq8mO" # ganti dengan punyamu
+      - url: "https://discord.com/api/webhooks/1372507489064587336/6z9ONKp9Oq6FGGs-_By-9DZVPwBINOoIRO7dtKBNvX0-qi46D6dg1FT8Mz-E0T3oq8mO"
         send_resolved: true

@@ -2,7 +2,7 @@ groups:
   - name: image-usage-percent-rules
     rules:
       - alert: ImageUsageHigh
-        expr: webapp_images_usage_percent > 0
+        expr: webapp_images_usage_percent > 80
         for: 1m
         labels:
           severity: warning
